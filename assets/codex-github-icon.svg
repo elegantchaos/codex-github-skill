@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="3600px" height="3600px" viewBox="0 0 3600 3600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch Private 63 (92380) - https://sketch.com -->
+    <title>logo grey background no shadow</title>
+    <desc>Created with Sketch Private.</desc>
+    <g id="logo-grey-background-no-shadow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#D8D8D8" x="0" y="0" width="3600" height="3600"></rect>
+        <g id="Overall" transform="translate(393.000000, 409.000000)">
+            <g id="Logo" transform="translate(0.000000, 0.803552)">
+                <g id="Group">
+                    <path d="M1605,1 L1605,396.489109 C2071.67663,488.599155 2424.67663,899.660703 2424.67663,1391.49756 C2424.67663,1883.33441 2071.67663,2294.40084 1605,2386.506 L1605,2782 C2288.82014,2685.95041 2815,2100.1706 2815,1391.49756 C2815,682.824515 2288.82014,97.0447018 1605,1" id="Fill-2" fill="#FFFFFE"></path>
+                    <path d="M1785,1385.93215 C1785,1278.31977 1697.77188,1191.09118 1590.17099,1191.09118 L410.1725,1191.09118 C491.096735,789.260098 810.747464,472.575721 1214.87019,395.140744 L1214.87019,0 C528.748984,93.6061567 0,680.504151 0,1391 C0,2101.49585 528.748984,2688.39873 1214.87019,2782 L1214.87019,2386.85926 C807.351187,2308.76942 485.638259,1987.42281 408.100527,1580.77312 L1590.17099,1580.77312 C1697.77188,1580.77312 1785,1493.53965 1785,1385.93215" id="Fill-8" fill="#1A1919"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

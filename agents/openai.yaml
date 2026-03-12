@@ -1,0 +1,7 @@
+interface:
+  display_name: "Codex GitHub"
+  short_description: "Use when working with GitHub workflows in Codex.app. It covers pull requests, draft releases, and safe non-interactive gh CLI usage."
+  icon_small: "./assets/codex-github-icon.svg"
+  icon_large: "./assets/codex-github-icon.png"
+  brand_color: "#1A1A1A"
+  default_prompt: "Use $codex-github for GitHub workflow tasks such as pull requests and draft releases, and pair it with $codex-git when git write commands are involved."
