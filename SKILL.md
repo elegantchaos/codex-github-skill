@@ -1,21 +1,24 @@
 ---
 name: codex-github
-description: Use when working with GitHub workflows in Codex.app. It covers pull requests, draft releases, and safe non-interactive gh CLI usage, while relying on codex-git for git write-side behavior.
+description: Use when working with GitHub in Codex.app. It covers pull requests, draft releases, and safe non-interactive gh CLI usage, while relying on codex-git for git write-side behavior.
 ---
 
 # Codex GitHub
 
-Use this skill when working with GitHub workflows in Codex.app.
+Use this skill when working with GitHub in Codex.app.
 
-## Purpose
+Use `codex-git` alongside this skill when the task also needs git write commands.
 
-This skill is the canonical place for GitHub workflow guidance in the shared setup. Use it for:
+Read the relevant reference file before running `gh` commands:
 
-- pull request creation and editing
-- draft release preparation
-- safe non-interactive `gh` CLI usage
+- for pull requests, read `references/pull-requests.md`
+- for draft releases, read `references/draft-releases.md`
 
-Use `codex-git` alongside this skill when the workflow also needs git write commands.
+## Use This Skill When
+
+- creating or editing pull requests
+- preparing or updating draft releases
+- running `gh` commands non-interactively in Codex.app
 
 ## Shared Rules
 
@@ -24,61 +27,15 @@ Use `codex-git` alongside this skill when the workflow also needs git write comm
 - Include validation summary and known gaps when they are relevant.
 - When a workflow requires git writes, use `codex-git` for escalation and command-shape guidance.
 
-## Pull Requests
+## Process
 
-### Rules
+1. Decide whether the task is a pull request task or a draft release task.
+2. Read the matching reference file before running commands.
+3. Follow that reference process completely.
+4. Use `codex-git` alongside this skill if the task also needs git write commands.
 
-- Always use `--body-file` for PR descriptions.
-- Never use inline `--body` for multi-line markdown.
-- Prefer building the PR body in a temporary markdown file, then passing it to `gh pr create` or `gh pr edit`.
-- After updating PR body text, verify the final result with `gh pr view --json body,url`.
-- Always push the PR head branch before creating or editing the PR.
-- If push fails, stop and report the exact push error.
+## References
 
-### Workflow
-
-1. Check whether the branch needs updating before push.
-   - If the head branch is behind the intended base branch, offer to pull and resolve conflicts before pushing.
-2. Verify and push the PR head branch.
-   - Use `git branch --show-current` to confirm the current branch when needed.
-   - Push the head branch before PR creation or editing.
-3. Build the PR body in a file.
-4. Create or edit the PR with `gh pr create --body-file` or `gh pr edit --body-file`.
-5. Verify final PR text with `gh pr view --json body,url`.
-
-### Notes
-
-- Keep PR summaries concise and factual.
-- Include explicit validation bullets.
-- `--body-file` avoids shell interpolation risks involving backticks, `$`, parentheses, and embedded markdown.
-
-## Draft Releases
-
-### Rules
-
-- Draft releases must be prepared from `main` unless the user explicitly asks for another target.
-- Push `main` before drafting the release.
-- Generate notes from the actual commit range, then improve them before creating the draft.
-- Leave the release in draft state unless the user explicitly asks to publish it.
-
-### Workflow
-
-1. Confirm release inputs.
-   - Determine the new release tag.
-   - Determine the target branch or commit.
-2. Verify the release is being prepared from `main`, unless the user directed otherwise.
-3. Push the target branch before drafting.
-4. Generate release notes.
-   - Prefer `rt changes --end <target> > /tmp/<new_tag>-notes.md` when ReleaseTools is available.
-   - The included `scripts/generate_release_notes.swift` helper is available when a simple git-log-based fallback is needed.
-5. Improve the generated notes.
-   - Add a short human-readable opening summary.
-6. Create or update the draft release with `gh release create --draft --notes-file` or `gh release edit --draft --notes-file`.
-7. Hand off for manual review and publish.
-
-### Output Checklist
-
-- report `new_tag`, `previous_tag`, and `target`
-- report the exact commit range used for notes
-- report the draft release URL
-- confirm that the release remains in draft state
+- `references/pull-requests.md`: PR creation and editing process, `--body-file` rules, and verification steps
+- `references/draft-releases.md`: draft release process, notes generation rules, and output checklist
+- `scripts/generate_release_notes.swift`: git-log-based fallback for release notes when ReleaseTools is unavailable
