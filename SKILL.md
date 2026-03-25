@@ -25,14 +25,13 @@ Read the relevant reference file before running `gh` commands:
 - Prefer deterministic, non-interactive `gh` commands.
 - Keep PRs and release notes factual and scoped to the actual diff.
 - Include validation summary and known gaps when they are relevant.
-- When a workflow requires git writes, use `codex-git` for escalation and command-shape guidance.
+- When a workflow requires git writes, use the `codex-git` skill for escalation and command-shape guidance.
 
 ## Process
 
 1. Decide whether the task is a pull request task or a draft release task.
 2. Read the matching reference file before running commands.
 3. Follow that reference process completely.
-4. Use `codex-git` alongside this skill if the task also needs git write commands.
 
 ## References
 
